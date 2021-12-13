@@ -1,0 +1,21 @@
+# Ignore file extensions
+*.db
+*.log
+*.db
+*.sqlite
+
+# Ignore folders
+themes/
+custom_components/
+.storage/
+
+# Ignore secrets
+secrets.yaml
+
+# Ignore log files
+home-assistant.log
+home-assistant.log.*
+
+# Ignore database files
+home-assistant_v2
+home-assistant_v2.*

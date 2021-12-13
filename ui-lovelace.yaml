@@ -1,0 +1,52 @@
+title: Home
+views:
+  - path: default_view
+    title: Home
+    theme: Google Dark Theme
+    icon: mdi:lamps
+    badges: []
+    cards:
+      - type: entities
+        title: Kitchen Lights
+        entities:
+          - entity: light.kitchen_spot_left
+            name: Spot Left
+          - entity: light.kitchen_spot_right
+            name: Spot Right
+        header:
+          type: buttons
+          entities: []
+        footer:
+          type: buttons
+          entities: []
+        theme: Google Dark Theme
+        state_color: true
+      - type: entities
+        title: Lounge Lights
+        entities:
+          - entity: light.lounge_bulb_m_t
+            name: TV Top
+          - entity: light.lounge_bulb_m_d
+            name: TV Down
+          - entity: light.lounge_bulb_l_t
+            name: Couch Top
+          - entity: light.lounge_bulb_l_m
+            name: Couch Center
+          - entity: light.lounge_bulb_l_d
+            name: Couch Down
+          - entity: light.lounge_bulb_s
+            name: Dining Table
+        header:
+          type: buttons
+          entities: []
+        footer:
+          type: buttons
+          entities: []
+        theme: Google Dark Theme
+        state_color: true
+  - title: Other
+    path: other
+    icon: mdi:chart-line
+    theme: Google Dark Theme
+    badges: []
+    cards: []

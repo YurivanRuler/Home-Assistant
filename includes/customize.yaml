@@ -1,0 +1,6 @@
+homeassistant:
+  customize:
+
+  # Lights
+  kitchen_spot_left:
+    icon: mdi:lightbulb-halogen

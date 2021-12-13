@@ -1,0 +1,15 @@
+group: 
+  kitchen:
+    name: Kitchen 🍕🍭
+    entities:
+      - light.kitchen_spot_left
+      - light.kitchen_spot_right
+  lounge:
+    name: The Lounge 📺
+    entities:
+      - light.lounge_bulb_m_t
+      - light.lounge_bulb_m_d
+      - light.lounge_bulb_l_t
+      - light.lounge_bulb_l_d
+      - light.lounge_bulb_l_m
+      - light.lounge_bulb_s

@@ -1,0 +1,25 @@
+light:
+  - platform: wiz_light
+    name: kitchen_spot_left
+    host: !secret ip_kitchen_spot_left
+  - platform: wiz_light
+    name: kitchen_spot_right
+    host: !secret ip_kitchen_spot_right 
+  - platform: wiz_light
+    name: lounge_bulb_m_t
+    host: !secret ip_lounge_bulb_m_t
+  - platform: wiz_light
+    name: lounge_bulb_m_d
+    host: !secret ip_lounge_bulb_m_d
+  - platform: wiz_light
+    name: lounge_bulb_l_t
+    host: !secret ip_lounge_bulb_l_t
+  - platform: wiz_light
+    name: lounge_bulb_l_d
+    host: !secret ip_lounge_bulb_l_d
+  - platform: wiz_light
+    name: lounge_bulb_l_m
+    host: !secret ip_lounge_bulb_l_m
+  - platform: wiz_light
+    name: lounge_bulb_s
+    host: !secret ip_lounge_bulb_s
