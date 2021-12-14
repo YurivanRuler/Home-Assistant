@@ -1,0 +1,10 @@
+automation:
+  - alias: phone_charging_light_toggle
+    initial_state: true
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.s20_is_charging
+    action:
+      - service: light.toggle
+        target:
+          entity_id: light.lounge_bulb_m_t
