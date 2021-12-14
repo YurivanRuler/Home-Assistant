@@ -44,9 +44,24 @@ views:
           entities: []
         theme: Google Dark Theme
         state_color: true
-  - title: Other
-    path: other
-    icon: mdi:chart-line
+  - title: Phone
+    path: phone
+    icon: mdi:cellphone
     theme: Google Dark Theme
     badges: []
-    cards: []
+    cards: 
+      - type: entity
+        entity: binary_sensor.s20_is_charging
+        name: S20 Charging
+      - type: entity
+        entity: sensor.s20_battery_health
+        name: S20 Battery Health
+      - type: entity
+        entity: sensor.s20_battery_state
+        name: S20 Battery State
+      - type: entity
+        entity: sensor.s20_battery_temperature
+        name: S20 Battery Temperature
+      - type: entity
+        entity: sensor.s20_geocoded_location
+        name: S20 Geocoded Location
