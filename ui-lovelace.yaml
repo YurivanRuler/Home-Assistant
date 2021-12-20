@@ -65,3 +65,12 @@ views:
       - type: entity
         entity: sensor.s20_geocoded_location
         name: S20 Geocoded Location
+      - type: entity
+        entity: sensor.s20_next_alarm
+        name: S20 Next Alarm
+      - type: entity
+        entity: sensor.s20_light_sensor
+        name: S20 Light Sensor
+      - type: entity
+        entity: sensor.s20_do_not_disturb_sensor
+        name: S20 Do Not Disturb
