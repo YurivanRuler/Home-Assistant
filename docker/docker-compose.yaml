@@ -1,0 +1,14 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    restart: unless-stopped
+    image: homeassistant/home-assistant:latest
+    volumes:
+      - ../configuration:/config
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8123:8123
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
