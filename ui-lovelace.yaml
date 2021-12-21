@@ -74,3 +74,10 @@ views:
       - type: entity
         entity: sensor.s20_do_not_disturb_sensor
         name: S20 Do Not Disturb
+      - type: iframe
+        url: http://gimli:8123/api/hassio_ingress/oTvDIHeWFN5lT6y6Sz5YqKrI6fk9BUQsgL42et5Iz6c/d-solo/AXidBoT7z/systems-monitoring?orgId=1&from=1640014723373&to=1640036323373&panelId=2
+      - type: entity
+        entity: sensor.s20_battery_level
+        
+        
+      
