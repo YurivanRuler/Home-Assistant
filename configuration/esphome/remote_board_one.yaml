@@ -1,0 +1,55 @@
+esphome:
+  name: remote_board_one
+
+esp8266:
+  board: d1_mini
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+# Enable remote flashing
+ota:
+  password: "6217509cd30c4e3dce3db9b9407436ff"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  
+  # Fix for not being able to connect sensors due to ESPHome running in Docker 
+  manual_ip:
+    static_ip: !secret remote_board_one_static_ip
+    gateway: !secret wifi_gateway
+    subnet: !secret wifi_subnet
+
+binary_sensor:
+  - platform: gpio
+    name: btn_red
+    id: btn_red
+    pin:
+      number: D6
+      inverted: True
+    filters:
+      - delayed_on: 10ms
+      
+  - platform: gpio
+    name: btn_blue
+    id: btn_blue
+    pin:
+      number: D7
+      inverted: True
+    filters:
+      - delayed_on: 10ms
+
+sensor:
+  - platform: adc
+    pin: A0
+    id: potentiometer
+    name: potentiometer
+    update_interval: 5s
+    filters:
+      - calibrate_linear:
+        - 0.0 -> 0.0
+        - 1.0 -> 255.0

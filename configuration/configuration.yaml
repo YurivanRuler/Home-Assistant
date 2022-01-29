@@ -10,17 +10,11 @@ homeassistant:
 
 lovelace:
   mode: yaml
-  
+  resources:
+  - url: /local/home-assistant-sun-card.js
+    type: module
+
 frontend:
-  themes: !include_dir_merge_named themes
-
 mobile_app:
-
-influxdb:
-    host: !secret influxdb_ip
-    port: !secret influxdb_port
-    database: !secret influxdb_database
-    username: !secret influxdb_username
-    password: !secret influxdb_password
-    max_retries: 3
-    default_measurement: state
+energy:
+sun:

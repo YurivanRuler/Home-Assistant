@@ -1,8 +1,0 @@
-homeassistant:
-  customize:
-
-  # Lights
-  kitchen_spot_left:
-    icon: mdi:lightbulb-halogen
-  kitchen_spot_right:
-    icon: mdi:lightbulb-halogen

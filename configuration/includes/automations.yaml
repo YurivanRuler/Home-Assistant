@@ -1,10 +1,30 @@
 automation:
-  - alias: phone_charging_light_toggle
-    initial_state: true
+  - alias: toggle_light_twr_33
     trigger:
       - platform: state
-        entity_id: binary_sensor.s20_is_charging
+        entity_id: binary_sensor.btn_blue
     action:
       - service: light.toggle
         target:
-          entity_id: light.lounge_bulb_m_t
+          entity_id: light.wiz_twr_33
+         
+  - alias: mobile_notification
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.btn_red
+    action:
+      - service: notify.mobile_app_s20
+        data:
+          title: "This is a notification"
+          message: "With a cool message!"
+          
+  - alias: potentiometer
+    trigger:
+      - platform: state
+        entity_id: sensor.potentiometer
+    action:
+      - service: light.turn_on
+        target:
+          entity_id: light.lounge_lights
+        data:
+          brightness: '{{sensor.pot}}'

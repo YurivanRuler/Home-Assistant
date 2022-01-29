@@ -1,0 +1,9 @@
+script:
+  turn_on_lounge_lights:
+    alias: "Lounge Lights On"
+    sequence:
+      service: light.toggle
+      target:
+        entity_id: light.lounge_lights
+      data:
+        brightness: 100 

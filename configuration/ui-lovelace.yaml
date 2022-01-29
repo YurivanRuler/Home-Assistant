@@ -1,53 +1,49 @@
 title: Home
 views:
-  - path: default_view
-    title: Home
-    theme: Google Dark Theme
+  - title: Home
+    path: default_view
     icon: mdi:lamps
     badges: []
     cards:
+      - type: 'custom:sun-card'
+      - type: media-control
+        entity: media_player.master_bedroom_tv
+        name: Chromecast
       - type: entities
         title: Kitchen Lights
         entities:
-          - entity: light.kitchen_spot_left
+          - entity: light.wiz_spot_l
             name: Spot Left
-          - entity: light.kitchen_spot_right
+          - entity: light.wiz_spot_r
             name: Spot Right
-        header:
-          type: buttons
-          entities: []
-        footer:
-          type: buttons
-          entities: []
-        theme: Google Dark Theme
         state_color: true
       - type: entities
         title: Lounge Lights
         entities:
-          - entity: light.lounge_bulb_m_t
+          - entity: light.wiz_twr_22
             name: TV Top
-          - entity: light.lounge_bulb_m_d
+          - entity: light.wiz_twr_21
             name: TV Down
-          - entity: light.lounge_bulb_l_t
+          - entity: light.wiz_twr_33
             name: Couch Top
-          - entity: light.lounge_bulb_l_m
+          - entity: light.wiz_twr_32
             name: Couch Center
-          - entity: light.lounge_bulb_l_d
+          - entity: light.wiz_twr_31
             name: Couch Down
-          - entity: light.lounge_bulb_s
+          - entity: light.wiz_twr_11
             name: Dining Table
-        header:
-          type: buttons
-          entities: []
-        footer:
-          type: buttons
-          entities: []
-        theme: Google Dark Theme
         state_color: true
-  - title: Phone
+      - type: entities
+        entities:
+          - entity: binary_sensor.btn_blue
+            name: "Blue: toggle light"
+          - entity: binary_sensor.btn_red
+            name: "Red: send notification"
+        title: Custom Sensors
+
+  - title: Phone Sensors
     path: phone
     icon: mdi:cellphone
-    theme: Google Dark Theme
     badges: []
     cards: 
       - type: entity
@@ -69,15 +65,36 @@ views:
         entity: sensor.s20_next_alarm
         name: S20 Next Alarm
       - type: entity
-        entity: sensor.s20_light_sensor
-        name: S20 Light Sensor
-      - type: entity
         entity: sensor.s20_do_not_disturb_sensor
         name: S20 Do Not Disturb
-      - type: iframe
-        url: http://gimli:8123/api/hassio_ingress/oTvDIHeWFN5lT6y6Sz5YqKrI6fk9BUQsgL42et5Iz6c/d-solo/AXidBoT7z/systems-monitoring?orgId=1&from=1640014723373&to=1640036323373&panelId=2
       - type: entity
         entity: sensor.s20_battery_level
         
+  - title: Power Consumption (temp)
+    path: house
+    icon: mdi:home
+    badges: []
+    cards:
+      - type: entity
+        entity: sensor.power_tariff
+        name: Tarief       
+      - type: history-graph
+        title: 'Power Consumption'
+        entities: 
+          - entity: sensor.energy_consumption_tarif_1
+          - entity: sensor.energy_consumption_tarif_2
+          - entity: sensor.energy_production_tarif_1
+          - entity: sensor.energy_production_tarif_2
+      - type: history-graph
+        title: 'Power Consumption 2.0'
+        entities: 
+          - sensor.power_consumption
+          - sensor.power_production
+      - type: statistics-graph
+        title: 'Power Consumption 3.0'
+        entities:
+          - sensor.power_consumption
+          - sensor.power_production
+          
         
       
