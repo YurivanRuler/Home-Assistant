@@ -12,7 +12,7 @@ api:
 
 # Enable remote flashing
 ota:
-  password: "6217509cd30c4e3dce3db9b9407436ff"
+  password: !secret remote_board_one_ota_password
 
 wifi:
   ssid: !secret wifi_ssid
