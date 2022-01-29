@@ -1,11 +1,43 @@
 services:
-  homeassistant:
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    restart: unless-stopped
+    ports:
+      - 6052:6052
+    volumes:
+      - ../configuration/esphome:/config:rw
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - ESPHOME_DASHBOARD_USE_PING=true
+    privileged: true
+      
+  configurator:
+    container_name: configurator
+    image: causticlab/hass-configurator-docker:x86_64
+    restart: unless-stopped
+    ports:
+      - 3218:3218
+    volumes:
+      - ../configuration:/config
+    environment:
+      - HC_BASEPATH=/config
+      - HC_HASS_API_PASSWORD=${CONFIGURATORPWD}
+      - HC_IGNORE_SSL=True
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+
+  homeassistant: 
     container_name: homeassistant
     restart: unless-stopped
     image: homeassistant/home-assistant:latest
     volumes:
       - ../configuration:/config
-      - /etc/localtime:/etc/localtime:ro
+      - /etc/localtime:/etc/localtime:ro  
+    devices:
+      # DSMR Slimme Meter
+      - /dev/ttyUSB0:/dev/ttyUSB0
     ports:
       - 8123:8123
     environment:
