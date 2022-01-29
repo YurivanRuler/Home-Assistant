@@ -6,9 +6,11 @@
 *.env
 
 # Ignore folders
-themes/
-custom_components/
-.storage/
+themes/**
+custom_components/**
+.storage/**
+www/**
+esphome/.esphome/**
 
 # Ignore secrets
 secrets.yaml
